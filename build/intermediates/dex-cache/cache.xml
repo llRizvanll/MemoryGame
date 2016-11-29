@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/exploded-aar/com.amitshekhar.android/android-networking/0.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f85d941ba578cd5df97f95259b2252d3e8967739">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/com.amitshekhar.android-android-networking-0.2.0_7302653ee1d5b704a8e438f48e7360b9bffd5506.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_ab287a9d9823e830291741786816052851f94bc8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_c527ebccf8c8eb7f54599d75a76d678807a1968b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_ab55099f42f13495a68b3942fe00abe6157742e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/gson-2.7_22bcb43bacd57b9cee8b7b5f994002398e7ea057.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/okhttp-3.2.0_7a18a71e2074cfe9b7cf61ca0052bf4905ddbabc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.4.0/f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2/picasso-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/picasso-2.4.0_cc2ef7f2afc9945e299d3258663f53d4dc613658.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="40e7757d9b06db670062ddb3cf5b30c129b2fd8c">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.0.0_df8bc4b589e719db7306543473b8b2751804a7d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/butterknife-7.0.1_139486512a1987157b1c38ea67ac2a0b206f4485.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/okio-1.6.0_2811137c42604ba5e0f19ef3ba04691d5e0fbaa5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/jrizvan/Downloads/MemoryGame/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_06cd576047da0421586cb2f12dd00b64585b26fb.jar" />
+    </item>
+
+</items>
