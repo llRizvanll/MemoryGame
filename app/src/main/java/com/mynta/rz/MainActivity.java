@@ -1,16 +1,18 @@
 package com.mynta.rz;
 
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.androidnetworking.error.ANError;
 import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,6 +36,26 @@ public class MainActivity extends AppCompatActivity {
     ImageView randomPicView;
     @Bind(R.id.status_txt_view)
     TextView statusTextView;
+    private ImageItem curImageItem = new ImageItem();
+    private ImageListAdapter imageListAdapter = null;
+    private List list = new ArrayList();
+    private Map<Integer, ImageItem> map = new HashMap<Integer, ImageItem>();
+    private RecyclerView recyclerView;
+    private int min_index = 0;
+    private int max_index = 9;
+    ImageListAdapter.ImageSelection gridListener = new ImageListAdapter.ImageSelection() {
+        @Override
+        public Boolean imageSelected(int position, String imagePath) {
+            Log.d("DATA_HOLD", " POSITION : " + position + " IMAGEPATH : " + imagePath);
+            if (curImageItem.getImagePath().equals(imagePath)) {
+                statusTextView.setText("MATCH, NEXT!");
+                return setNewImage(position);
+            } else {
+                statusTextView.setText("NOPE, TRY AGAIN!");
+            }
+            return false;
+        }
+    };
 
     @OnClick(R.id.newgame_btn)
     public void startGameAgain(){
@@ -41,12 +63,6 @@ public class MainActivity extends AppCompatActivity {
         map.clear();
         startImageDownload();
     }
-
-    private ImageItem curImageItem = new ImageItem();
-    private ImageListAdapter imageListAdapter = null ;
-    private List list = new ArrayList();
-    private Map<Integer,ImageItem> map = new HashMap<Integer,ImageItem>();
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showGridItems(ImageDataModel imageDataModel){
 
-        int count = imageDataModel.getItems().size() > 15 ? 15 : imageDataModel.getItems().size();
+        int count = imageDataModel.getItems().size() > max_index ? max_index : imageDataModel.getItems().size();
         for (int i = 0; i < count ; i++) {
             ImageDataModel.Item dataItem = imageDataModel.getItems().get(i);
             list.add(dataItem.getMedia().getM());
@@ -73,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (i == 0) {
                 curImageItem = item;
-                Picasso.with(this).load(map.get(curImageItem.getImagePath()).getImagePath()).fit().centerCrop().into(randomPicView);
+                Picasso.with(this).load(item.getImagePath()).fit().centerCrop().into(randomPicView);
             }
         }
 
@@ -137,37 +153,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    ImageListAdapter.ImageSelection gridListener = new ImageListAdapter.ImageSelection() {
-        @Override
-        public Boolean imageSelected(int position, String imagePath) {
-            Log.d("DATA_HOLD"," POSITION : "+position+" IMAGEPATH : "+imagePath);
-            if (curImageItem.getImagePath().equals(imagePath)) {
-                statusTextView.setText("MATCH, NEXT!");
-                return setNewImage(position);
-            }
-            else {
-                statusTextView.setText("NOPE, TRY AGAIN!");
-            }
-            return false;
-        }
-    };
-
-    private int min_index = 0;
-    private int max_index = 15;
     private Boolean setNewImage(int key){
         int i = 0;
-        while (i < max_index){
-            i++;
+        while (i <= max_index) {
+
             int nextNumber = new Random().nextInt((max_index - min_index) + 1)+ min_index;
             Log.d("IMAGE_TURN",""+nextNumber);
-            if (map.containsKey(nextNumber) && !map.get(nextNumber).getVisited() && nextNumber!=key){
+            if (map.containsKey(nextNumber) && !map.get(nextNumber).getVisited() && nextNumber != key) {
                 Log.d("IMAGE_TURN","NOT VISITED ");
-                curImageItem = map.get(nextNumber);
-                Picasso.with(this).load(map.get(nextNumber).getImagePath()).fit().centerCrop().into(randomPicView);
+                curImageItem = map.get(key);
                 curImageItem.setVisited(true);
                 map.put(key,curImageItem);
+                Picasso.with(this).load(map.get(nextNumber).getImagePath()).fit().centerCrop().into(randomPicView);
+                curImageItem = map.get(nextNumber);
                 break;
             }
+            if (nextNumber > max_index) continue;
+
+            i++;
             Log.d("IMAGE_TURN","NEXT INDEX "+i);
         }
         if (i >= max_index) statusTextView.setText("WINNER, START NEW!");

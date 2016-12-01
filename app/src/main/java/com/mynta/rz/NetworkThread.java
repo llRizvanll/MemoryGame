@@ -19,13 +19,6 @@ public class NetworkThread {
 
     }
 
-    public interface NetResponse{
-
-        void onResponse(ImageDataModel response);
-
-        void onError(ANError anError);
-    }
-
     public void cancelAllNetRequest(){
         AndroidNetworking.cancelAll();
     }
@@ -34,10 +27,9 @@ public class NetworkThread {
         AndroidNetworking.cancel(tag);
     }
 
-
     public void getImageList(final String searchTag, final NetResponse listener){
-        //https://api.flickr.com/services/feeds/photos_public.gne?tags=myntra&format=json
-        String httpPath = "https://api.flickr.com/services/feeds/photos_public.gne";
+        //https://api.flickr.com/services/feeds/photos_public.gne?tags=myntra&format=json&nojsoncallback=1
+        final String httpPath = "https://api.flickr.com/services/feeds/photos_public.gne";
         AndroidNetworking.get(httpPath)
                 .addQueryParameter("tags", searchTag)
                 .addQueryParameter("format", "json")
@@ -60,5 +52,13 @@ public class NetworkThread {
                         listener.onError(anError);
                     }
                 });
+    }
+
+
+    public interface NetResponse {
+
+        void onResponse(ImageDataModel response);
+
+        void onError(ANError anError);
     }
 }
